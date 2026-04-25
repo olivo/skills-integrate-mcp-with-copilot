@@ -16,7 +16,6 @@ body {
 }
 
 header {
-  text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
@@ -24,8 +23,81 @@ header {
   border-radius: 5px;
 }
 
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 20px;
+}
+
+.header-bar > div {
+  flex: 1;
+  text-align: center;
+}
+
 header h1 {
   margin-bottom: 10px;
+}
+
+.account-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.account-button.logged-in {
+  background-color: #2e7d32;
+  border-color: #a5d6a7;
+}
+
+.auth-panel {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.auth-panel-card {
+  width: 100%;
+  max-width: 360px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  padding: 18px;
+}
+
+.auth-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.panel-close {
+  background: none;
+  color: #1a237e;
+  font-size: 24px;
+  line-height: 1;
+  padding: 0;
+}
+
+.panel-close:hover {
+  background: none;
+  color: #3949ab;
+}
+
+.auth-status-text,
+.signup-helper-text {
+  margin-bottom: 15px;
+  color: #555;
 }
 
 main {
@@ -125,6 +197,10 @@ section h3 {
   background-color: #ffebee;
 }
 
+#logout-button {
+  width: 100%;
+}
+
 .participants-section p {
   color: #777;
   font-style: italic;
@@ -190,6 +266,24 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 767px) {
+  .header-bar {
+    padding: 0 16px;
+  }
+
+  .header-bar > div {
+    text-align: left;
+  }
+
+  .auth-panel {
+    justify-content: stretch;
+  }
+
+  .auth-panel-card {
+    max-width: none;
+  }
 }
 
 footer {
